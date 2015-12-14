@@ -11,11 +11,11 @@ use Symfony\Component\Yaml\Yaml;
 
 class Router{
 
-    const ROOT_ROOTING_FILE = '/app/resources/routing.yml';
+    const ROOT_ROUTING_FILE = '/app/resources/routing.yml';
 
     public static function loadRoutes(Application &$app,$file = null){
         if($file == null) {
-            $file_content = file_get_contents(BASE_DIR.self::ROOT_ROOTING_FILE);
+            $file_content = file_get_contents(BASE_DIR.self::ROOT_ROUTING_FILE);
         }elseif(file_exists($file)){
             $file_content = file_get_contents($file);
         }else{
