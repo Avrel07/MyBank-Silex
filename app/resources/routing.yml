@@ -1,0 +1,2 @@
+my_bank:
+    resource: "/src/MyBank/Resources/routing.yml"
