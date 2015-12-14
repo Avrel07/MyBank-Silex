@@ -1,0 +1,4 @@
+homepage:
+    path : "/"
+    action : 'MyBank\Controller\HomeController::indexAction'
+    method : "POST|GET"

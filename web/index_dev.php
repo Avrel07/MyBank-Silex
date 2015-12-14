@@ -7,14 +7,14 @@ require_once __DIR__.'/../vendor/autoload.php';
 Debug::enable();
 
 $app = new \Silex\Application();
-$app = require __DIR__ . '/../src/app.php';
+$app = require __DIR__ . '/../app/app.php';
 
 require __DIR__.'/../config/dev.php';
 
-$app->get('/', function () use ($app) {
-    return $app['twig']->render('index.twig', array());
-})
-    ->bind('homepage');
+//$app->get('/', 'MyBank\\Controller\\HomeController::indexAction');
+
+\MyBank\Utils\Router::loadRoutes($app);
+
 
 $app->run();
 
