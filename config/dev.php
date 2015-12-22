@@ -2,7 +2,7 @@
 
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\WebProfilerServiceProvider;
-
+use Silex\Provider\DoctrineServiceProvider;
 // include the prod configuration
 require __DIR__.'/prod.php';
 
@@ -15,4 +15,11 @@ $app->register(new MonologServiceProvider(), array(
 
 $app->register(new WebProfilerServiceProvider(), array(
 'profiler.cache_dir' => __DIR__.'/../var/cache/profiler',
+));
+
+$app->register(new DoctrineServiceProvider(), array(
+   'db.options' => array(
+       'driver' => 'pdo_sqlite',
+       'path' => __DIR__.'../db/app_dev.db'
+   )
 ));

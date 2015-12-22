@@ -9,6 +9,7 @@ class HomeController{
 
     public function indexAction(Request $request, Application $app)
     {
+        $app['db']->fetchAll('SELECT * FROM table');
         return $app['twig']->render('index.twig', array());
     }
 }
